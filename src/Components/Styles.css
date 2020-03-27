@@ -1,0 +1,18 @@
+.Search {
+    
+    display: flex;
+    justify-content: center;
+}
+.name-filter-button{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.movie-list {
+display: flex;
+justify-content: center;
+flex-flow: wrap-reverse;
+justify-content: space-between;
+}
