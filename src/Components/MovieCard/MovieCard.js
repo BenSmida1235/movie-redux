@@ -2,9 +2,10 @@ import React from "react";
 import Rating from "../Rating";
 import { deleteMovie, editMovie } from "../../JS/Actions/Actions";
 import "./Card.css"
-
+import MovieEdit from "../movieEdit";
 import { connect } from "react-redux";
 import { Card, CardImg, CardTitle, CardBody, Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function MovieCard(props) {
   return (
@@ -19,7 +20,9 @@ function MovieCard(props) {
 
         <CardBody>
           <CardTitle>{props.movie.title}</CardTitle>
-
+          <Link to={`/Description/${props.movie.id}`}>
+            <Button variant="outline-danger">Description</Button>
+          </Link>
           <Rating count={props.movie.rating}></Rating>
           <Button
             color="danger"
@@ -27,12 +30,7 @@ function MovieCard(props) {
           >
             Delete
           </Button>
-          <Button
-            color="success"
-            onClick={() => props.editMovie(props.movie.id)}
-          >
-            Edit
-          </Button>
+          <MovieEdit movie={props.movie} />
         </CardBody>
       </Card>
     </div>
