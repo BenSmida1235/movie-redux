@@ -2,7 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 
 function Description(props) {
-  const movie = props.trailer.filter(el => el.id == props.match.params.id);
+  const movie = props.trailer.filter(el => el.id == props.match.params.id
+    );
 
   return (
     <div>
@@ -21,7 +22,7 @@ function Description(props) {
 
 const mapStateToProps = state => {
   return {
-    trailer: state.movieItems
+    trailer: state.movieData
   };
 };
 export default connect(mapStateToProps)(Description);

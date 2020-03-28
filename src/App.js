@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Search />
-        <MovieList />
+       
         <Switch>
           <Route exact path="/" component={MovieList} />
           <Route
